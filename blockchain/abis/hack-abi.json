@@ -1,0 +1,160 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "sender",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "CASNumber",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "amount",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "address",
+        "name": "recipient",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "bankAccountSortCode",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "bankAccountNumber",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "bankName",
+        "type": "string"
+      }
+    ],
+    "name": "PaymentProcessed",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "studentAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "CASNumber",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "fullName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "email",
+        "type": "string"
+      }
+    ],
+    "name": "StudentRegistered",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "studentAddress",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "CASNumber",
+        "type": "uint256"
+      }
+    ],
+    "name": "StudentVerified",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_CASNumber", "type": "uint256" },
+      { "internalType": "address", "name": "_recipient", "type": "address" },
+      {
+        "internalType": "string",
+        "name": "_bankAccountSortCode",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "_bankAccountNumber",
+        "type": "string"
+      },
+      { "internalType": "string", "name": "_bankName", "type": "string" }
+    ],
+    "name": "processPayment",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_CASNumber", "type": "uint256" },
+      { "internalType": "string", "name": "_fullName", "type": "string" },
+      { "internalType": "string", "name": "_email", "type": "string" }
+    ],
+    "name": "registerStudent",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }],
+    "name": "students",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "studentAddress",
+        "type": "address"
+      },
+      { "internalType": "uint256", "name": "CASNumber", "type": "uint256" },
+      { "internalType": "string", "name": "fullName", "type": "string" },
+      { "internalType": "string", "name": "email", "type": "string" },
+      { "internalType": "bool", "name": "registered", "type": "bool" },
+      { "internalType": "bool", "name": "verified", "type": "bool" }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      { "internalType": "uint256", "name": "_CASNumber", "type": "uint256" }
+    ],
+    "name": "verifyStudent",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
